@@ -1,4 +1,29 @@
-*,
+// SASS Colour Variables
+$colors: (
+  primary: #d12e3b,
+  secondary: #457b9d,
+  tertiary: #132238,
+  black: #0f0f0f,
+  white-1: #f4f8f9,
+  white-2: #dfdfdf
+);
+
+// Font
+$font-primary: "Montserrat", sans-serif;
+
+:root {
+  // Map SASS Colours to CSS4 vars
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+}
+
+// Declare Colors Using Function e.g. color(primary) --> var(--color-primary)
+@function color($color-name) {
+  @return var(--color-#{$color-name});
+}
+
+E63946 *,
 *::before,
 *::after {
   margin: 0;
@@ -8,8 +33,16 @@
 
 html {
   font-size: 62.5%;
+  font-family: $font-primary;
 }
 
 body {
   box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin: 0;
 }
