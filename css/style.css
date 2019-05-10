@@ -26,6 +26,12 @@ h1 {
   font-weight: 400;
   margin: 0; }
 
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
 header {
   background-color: var(--color-primary);
   color: var(--color-white-1);
@@ -49,25 +55,26 @@ footer {
   margin: auto; }
 
 .list-box {
-  flex: 0 0 30rem; }
+  flex: 0 0 30rem;
+  text-transform: uppercase; }
   .list-box ul {
     list-style: none;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    height: 0;
+    overflow: hidden; }
+    @media all and (max-width: 800px) {
+      .list-box ul {
+        height: 20rem;
+        overflow-y: scroll; } }
   @media all and (max-width: 800px) {
     .list-box {
-      flex: 1;
-      padding: 2rem; } }
+      flex: 0;
+      border: 1px solid var(--color-white-2); } }
 
 .card-box {
   flex: 1;
   align-items: baseline; }
-  @media all and (max-width: 800px) {
-    .card-box.flex-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      display: block; } }
 
 .modal-container {
   position: relative;
@@ -115,7 +122,12 @@ footer {
   .list-select__arrow {
     flex: 0 0 2rem;
     border-left: 1px solid var(--color-white-2);
-    padding: 1rem 1.6rem; }
+    padding: 1rem 1.6rem;
+    position: relative;
+    text-align: center; }
+  @media all and (max-width: 800px) {
+    .list-select {
+      margin-bottom: 0; } }
 
 .list-box_button {
   width: 100%;
@@ -125,7 +137,8 @@ footer {
   border-bottom: 1px solid var(--color-white-2);
   background-color: var(--color-white-1);
   cursor: pointer;
-  transition: 0.3; }
+  transition: 0.3;
+  text-transform: uppercase; }
   .list-box_button:hover {
     background-color: var(--color-white-2); }
 
@@ -134,15 +147,39 @@ footer {
   padding: 0.5rem;
   max-height: 30rem;
   overflow: hidden;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0 auto; }
   .card__img {
     width: 100%;
     border-radius: 3px; }
+
+.empty-text {
+  font-size: 10rem;
+  text-align: center;
+  padding: 5rem;
+  color: var(--color-white-2); }
+
+.fas.fa-chevron-down {
+  width: 20px;
+  height: 20px;
+  margin: auto; }
 
 .flex-box {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start; }
+  @media all and (max-width: 800px) {
+    .flex-box {
+      flex-direction: column;
+      align-items: stretch; } }
 
 .jc-sb {
   justify-content: space-between; }
+
+.r-180 {
+  transition: 0.5s;
+  transform: rotate(180deg); }
+
+.r-0 {
+  transition: 0.5s;
+  transform: rotate(0deg); }

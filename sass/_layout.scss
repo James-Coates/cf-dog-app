@@ -26,15 +26,23 @@ footer {
 
 .list-box {
   flex: 0 0 30rem;
+  text-transform: uppercase;
 
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 0;
+    overflow: hidden;
+
+    @media all and (max-width: 800px) {
+      height: 20rem;
+      overflow-y: scroll;
+    }
   }
   @media all and (max-width: 800px) {
-    flex: 1;
-    padding: 2rem;
+    flex: 0;
+    border: 1px solid color(white-2);
   }
 }
 
@@ -42,17 +50,17 @@ footer {
   flex: 1;
   align-items: baseline;
 
-  &.flex-box {
-    @media all and (max-width: 800px) {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      // width: 80%;
-      // height: 80vh;
-      // z-index: 1000;
-      display: block;
-    }
-  }
+  // &.flex-box {
+  //   @media all and (max-width: 800px) {
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 50%;
+  //     // width: 80%;
+  //     // height: 80vh;
+  //     // z-index: 1000;
+  //     display: block;
+  //   }
+  // }
 }
 
 .modal-container {

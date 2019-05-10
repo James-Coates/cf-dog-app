@@ -67,20 +67,42 @@
   // Init Repository
   dogRepository.loadList().then(function() {
     const dogRep = dogRepository.getAll();
+    // For each breed create li with button
     $.each(dogRep, function(i, breed) {
       $('#dog-list').append(createListItem(i, breed));
     });
+    // Add event listener to button to retrieve imageURLs
     $('body').on('click', '.list-box_button', function() {
+      $('.list-select__option').text($(this).text());
       dogRepository.loadImages($(this).attr('id')).then(function(response) {
         $('.card-box').empty();
         $.each(response.message, function(i, imageURL) {
           $('.card-box').append(createImage(imageURL));
         });
       });
-      // Show dog images
     });
   });
-
-  console.log(dogRepository.getAll());
-  // Fill list of dogs from api into list items
+  // Select Button Logic
+  let listOn = false;
+  $('.list-select__arrow').on('click', function() {
+    if (listOn) {
+      $('#dog-list').animate({ height: '0px', opacity: '0.4' }, 'slow');
+      $(this)
+        .children()
+        .removeClass('r-180')
+        .addClass('r-0');
+      listOn = false;
+    } else {
+      if ($(window).width() < 800) {
+        $('#dog-list').animate({ height: '300px', opacity: '1' }, 'slow');
+      } else {
+        $('#dog-list').animate({ height: '100%', opacity: '1' }, 'slow');
+      }
+      $(this)
+        .children()
+        .removeClass('r-0')
+        .addClass('r-180');
+      listOn = true;
+    }
+  });
 })();
