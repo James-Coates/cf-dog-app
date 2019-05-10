@@ -5,7 +5,6 @@
     url(../img/wrapper.jpg);
   background-position: center;
   padding: 10rem;
-  box-sizing: border-box;
   margin-bottom: 5rem;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,6 +24,28 @@
 
   @media all and (max-width: 800px) {
     display: none;
+  }
+}
+
+.list-select {
+  display: flex;
+  border: 1px solid color(white-2);
+  border-radius: 3px;
+  background-color: color(white-1);
+  position: relative;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &__option {
+    flex: 1;
+    top: 0;
+    padding: 1.6rem 0rem;
+  }
+  &__arrow {
+    flex: 0 0 2rem;
+    border-left: 1px solid color(white-2);
+    padding: 1rem 1.6rem;
   }
 }
 

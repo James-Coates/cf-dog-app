@@ -6,7 +6,7 @@
   --color-white-1: #f4f8f9;
   --color-white-2: #dfdfdf; }
 
-E63946 *,
+*,
 *::before,
 *::after {
   margin: 0;
@@ -64,7 +64,16 @@ footer {
   align-items: baseline; }
   @media all and (max-width: 800px) {
     .card-box.flex-box {
-      display: none; } }
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block; } }
+
+.modal-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: red; }
 
 .showcase {
   width: 100%;
@@ -72,7 +81,6 @@ footer {
   background-image: linear-gradient(to bottom right, rgba(69, 123, 157, 0.8), rgba(69, 123, 157, 0.1)), url(../img/wrapper.jpg);
   background-position: center;
   padding: 10rem;
-  box-sizing: border-box;
   margin-bottom: 5rem;
   background-repeat: no-repeat;
   background-size: cover;
@@ -90,6 +98,24 @@ footer {
   @media all and (max-width: 800px) {
     .showcase {
       display: none; } }
+
+.list-select {
+  display: flex;
+  border: 1px solid var(--color-white-2);
+  border-radius: 3px;
+  background-color: var(--color-white-1);
+  position: relative;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 2rem; }
+  .list-select__option {
+    flex: 1;
+    top: 0;
+    padding: 1.6rem 0rem; }
+  .list-select__arrow {
+    flex: 0 0 2rem;
+    border-left: 1px solid var(--color-white-2);
+    padding: 1rem 1.6rem; }
 
 .list-box_button {
   width: 100%;
