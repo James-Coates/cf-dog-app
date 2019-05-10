@@ -67,7 +67,7 @@
   // Init Repository
   dogRepository.loadList().then(function() {
     const dogRep = dogRepository.getAll();
-    $.each(dogRep, function(i, breed, subBreed) {
+    $.each(dogRep, function(i, breed) {
       $('#dog-list').append(createListItem(i, breed));
     });
     $('body').on('click', '.list-box_button', function() {
