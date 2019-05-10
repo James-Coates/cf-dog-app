@@ -30,6 +30,9 @@ header {
   background-color: var(--color-primary);
   color: var(--color-white-1);
   padding: 1rem 0; }
+  @media all and (max-width: 800px) {
+    header {
+      text-align: center; } }
 
 main {
   background-color: var(--color-white-1);
@@ -46,16 +49,22 @@ footer {
   margin: auto; }
 
 .list-box {
-  flex: 0 0 30rem;
-  background-color: beige; }
+  flex: 0 0 30rem; }
   .list-box ul {
     list-style: none;
     padding: 0;
     margin: 0; }
+  @media all and (max-width: 800px) {
+    .list-box {
+      flex: 1;
+      padding: 2rem; } }
 
 .card-box {
   flex: 1;
   align-items: baseline; }
+  @media all and (max-width: 800px) {
+    .card-box.flex-box {
+      display: none; } }
 
 .showcase {
   width: 100%;
@@ -78,6 +87,9 @@ footer {
     border-radius: 3px;
     display: inline-block;
     padding: 1rem; }
+  @media all and (max-width: 800px) {
+    .showcase {
+      display: none; } }
 
 .list-box_button {
   width: 100%;

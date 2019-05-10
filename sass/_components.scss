@@ -22,6 +22,10 @@
     display: inline-block;
     padding: 1rem;
   }
+
+  @media all and (max-width: 800px) {
+    display: none;
+  }
 }
 
 .list-box_button {
