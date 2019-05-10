@@ -38,7 +38,10 @@
 
 .card {
   width: 30rem;
-  padding: 2rem;
+  padding: 0.5rem;
+  max-height: 30rem;
+  overflow: hidden;
+  box-sizing: border-box;
 
   &__img {
     width: 100%;

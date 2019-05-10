@@ -54,7 +54,8 @@ footer {
     margin: 0; }
 
 .card-box {
-  flex: 1; }
+  flex: 1;
+  align-items: baseline; }
 
 .showcase {
   width: 100%;
@@ -89,14 +90,18 @@ footer {
 
 .card {
   width: 30rem;
-  padding: 2rem; }
+  padding: 0.5rem;
+  max-height: 30rem;
+  overflow: hidden;
+  box-sizing: border-box; }
   .card__img {
     width: 100%;
     border-radius: 3px; }
 
 .flex-box {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  align-items: flex-start; }
 
 .jc-sb {
   justify-content: space-between; }
