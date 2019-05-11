@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 (function() {
   // #region Respository Functions
   // *****************************
